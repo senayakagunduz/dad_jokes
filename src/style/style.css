@@ -1,10 +1,8 @@
-/* .App {
-  text-align: center;
-} */
 body{
   margin:0;
   padding: 0;
-  background: linear-gradient(to left bottom,lightblue,lightpink,lightblue);
+  /* background: linear-gradient(to left bottom,lightblue,lightpink,lightblue); */
+  background-image: url("../assets/purple-g238334074_1920.jpg");
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -12,11 +10,11 @@ body{
   font-family: monospace;
 }
 .form{
-  background-color: rgba(255,255,255,.3);
+  background-color: rgba(255,255,255,.6);
   padding:30px;
   border-radius: 10px;
   width:80%;
-  box-shadow: 0,6px,10px rgba(0,0,0,.3);
+  box-shadow: 0,6px,10px rgba(0,0,0,.5);
   color:darkslateblue;
   
 }
