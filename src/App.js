@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "../src/style/style.css";
+import Jokes from "./components/Jokes";
+import React, {  useState } from "react";
+import Loading from "./components/Loading";
+import axios from "axios";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const apiKey = "tLXCQmkdM5twFhQukUzyHA==MXaixEb7F5wBg1lR";
+  const apiUrl = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
+  const options = {
+    method: "GET",
+    headers: {
+      "X-Api-Key": apiKey,
+    },
+  };
+  const getJoke = async () => {
+    setLoading(true);
+    await axios(apiUrl, options)
+      .then((response) => {
+        setData(response.data[0].joke);
+      })
+      .catch((err) => console.log("Hatanız: ", err));
+  };
+  
+  if (loading) {
+    <main>
+      <Loading />
+    </main>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Jokes getJoke={getJoke} data={data} />
+    </main>
   );
 }
 
