@@ -20,6 +20,7 @@ function App() {
     await axios(apiUrl, options)
       .then((response) => {
         setData(response.data[0].joke);
+        setLoading(false);
       })
       .catch((err) => console.log("Hatanız: ", err));
   };
