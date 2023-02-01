@@ -29,7 +29,6 @@ function App() {
       <Loading />
     </main>;
   }
-
   return (
     <main>
       <Jokes getJoke={getJoke} data={data} />
