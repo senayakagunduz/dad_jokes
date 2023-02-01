@@ -1,4 +1,5 @@
 ![https://senayakgndz-jokes.netlify.app/]
+## ![dad_jokes](https://user-images.githubusercontent.com/69090467/216156041-523884fa-045b-426b-854d-829fd2f0aad6.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
